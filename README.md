@@ -1,6 +1,6 @@
 # Pinned
 
-by YOUR NAME HERE
+by Shaddix Harris
 
 ---
 
