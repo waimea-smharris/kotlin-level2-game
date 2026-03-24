@@ -17,7 +17,8 @@ val squares = mutableListOf<String>()
 
 fun main() {
 
-    println(" Pinned")
+    println(" Pinned \uD83D\uDCCC")
+    println("────────────────────────────────────────────────────────────────────────────────────────────────────")
     createSquares()
     createSquares()
     showSquares()
@@ -32,7 +33,7 @@ fun main() {
         } else if (action == 'S') {
             slideCounter()
         } else if (action == 'Q') {
-            println("")
+            println("---")
             break
         }
 
@@ -43,25 +44,25 @@ fun main() {
 
 
 fun createSquares() {
-    for (i in 1..16) {
-        squares.add("")
+    for (i in 1..8) {
+        squares.add("---")
 
     }
 }
 
 fun showSquares() {
-    println("     1          2          3456")
-    print("╭──────────")
-    print("┬──────────".repeat(n = squares.size - 1))
+    println("   1     2     3     4     5     6     7     8     9     10    11    12    13    14    15    16")
+    print("╭─────")
+    print("┬─────".repeat(n = squares.size - 1))
     println("╮")
 
     for (cell in squares) {
-        print("│ ${cell.padEnd(length = 8)} ")
+        print("│ ${cell.padEnd(length = 3)} ")
     }
     println("│")
 
-    print("╰──────────")
-    print("┴──────────".repeat(n = squares.size - 1))
+    print("╰─────")
+    print("┴─────".repeat(n = squares.size - 1))
     print("╯")
     for (c in squares) {
 
@@ -104,7 +105,7 @@ fun addCounter() {
     }
 
     for (i in 0..15) {
-        if (squares[i] == "") {
+        if (squares[i] == "---") {
             squares[i] = name
             println("Counter added")
             return
@@ -118,20 +119,20 @@ fun addCounter() {
 }
 
 
-//fun slideCounter() {
-//    println("First Square:")
-//    val c1 = getSquareNumber()
-//    println("Second Square:")
-//    val c2 = getSquareNumber()
-//    if (c1 >= 0 && c2 >= 0 && c1 < 16 && c2 < 16) {
-//        val temp = squares[c1]
-//        squares[c1] = squares[c2]
-//        squares[c2] = temp
-//        println("Counters switched")
-//
-//    }
-//
-//}
+fun slideCounter() {
+    println("First Square:")
+    val c1 = getSquareNumber()
+    println("Second Square:")
+    val c2 = getSquareNumber()
+    if (c1 >= 0 && c2 >= 0 && c1 < 8 && c2 < 8) {
+        val temp = squares[c1]
+        squares[c1] = squares[c2]
+        squares[c2] = temp
+        println("Counters switched")
+
+    }
+
+}
 
 
 
