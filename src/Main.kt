@@ -19,13 +19,33 @@ fun main() {
 
     println(" Pinned \uD83D\uDCCC")
     println("────────────────────────────────────────────────────────────────────────────────────────────────────")
+    println("Rules ")
+    println("")
+    println("### Game Setup\n" +
+
+            "- A row of 16 squares, numbered 1 to 16 from left to right\n" +
+            "- 5 counters (total) are placed randomly on the board - 4 white and 1 black\n" +
+            "- Decide who goes first\n" +
+            "\n" +
+            "### Gameplay\n" +
+            "- Players take turns - You may not skip your turn\n" +
+            "- On your turn you must do exactly one of the following:\n" +
+            "    - Slide any counter (black or white) any number of squares to the left, as long as no other counter is in the way and the destination square is empty, or...\n" +
+            "    - Remove the counter on square 1 (only if a counter is there)\n" +
+            "\n" +
+            "### Win Condition\n" +
+            "- The player who removes the black counter from square 1 wins\n" +
+            "\n" +
+            "### Variant\n" +
+            "- Counters can slide either left or right (but still can't jump other counters)\n")
+    println("────────────────────────────────────────────────────────────────────────────────────────────────────")
     createSquares()
     createSquares()
     showSquares()
     slideCounter()
 
 
-    while (true) {
+    while (t+rue) {
         showSquares()
         val action = getUserAction()
         if (action == 'A') {
@@ -44,11 +64,10 @@ fun main() {
 
 
 fun createSquares() {
-    for (i in 1..8) {
+    for (i in 1..8)
         squares.add("---")
 
     }
-}
 
 fun showSquares() {
     println("   1     2     3     4     5     6     7     8     9     10    11    12    13    14    15    16")
